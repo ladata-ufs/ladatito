@@ -3,8 +3,14 @@ import os
 from discord.ext import commands
 import re
 
+from dotenv import load_dotenv
+
 from GeminiRAG import GenerateLADATITO
-# Create a Discord client instance and set the command prefix
+
+load_dotenv()
+
+DISCORD_BOT_TOKEN = os.getenv("DISCORD_BOT_TOKEN")
+
 intents = discord.Intents.all()
 client = discord.Client(intents=intents)
 
@@ -44,5 +50,5 @@ async def on_message(message):
                 response_text = RAG.respond_general_query(clean_message)
                 await message.channel.send(response_text)
 
-# Retrieve token from the .env file
-bot.run(token="")
+
+bot.run(token=DISCORD_BOT_TOKEN)

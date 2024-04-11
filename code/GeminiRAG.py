@@ -2,15 +2,21 @@ import chromadb
 from typing import List
 from pypdf import PdfReader
 import re
+import os
 import google.generativeai as genai
+from dotenv import load_dotenv
 
 from embedding import GeminiEmbeddingFunction
+
+load_dotenv()
+
+GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
 
 class EnviromentLADATITO():
     
     def __init__(self):
-        self.key = ""
-        self.arquivos = ["bot_ladata/textos/estatuto_ladata.pdf", "bot_ladata/textos/projeto_ladata.pdf"]
+        self.key = GOOGLE_API_KEY
+        self.arquivos = ["code/textos/Estatuto da Liga Acadêmica de Ciência de Dados (LADATA).pdf", "code/textos/Estatuto da Liga Acadêmica de Ciência de Dados (LADATA).pdf"]
         self.db_path = "bot_ladata/data/"
         self.name = "ladatito"
 
@@ -52,7 +58,7 @@ class GenerateLADATITO(EnviromentLADATITO):
     def __init__(self):
         self.enviroment = EnviromentLADATITO().create_chroma_db()
         self.db = EnviromentLADATITO().load_chroma_collection()
-        self.key = "AIzaSyDxSeOvPuVfdPhPpKhlkcWJDGuHUzdss8Q"
+        self.key = GOOGLE_API_KEY
     
     def get_relevant_passage(self, query):
         passage = self.db.query(query_texts=[query], n_results=100)['documents'][0]
