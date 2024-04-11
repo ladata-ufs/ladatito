@@ -37,3 +37,9 @@
 
 * `exibir_resposta`<br>
     Formata e exibe a mensagem no notebook.
+
+## `embeddings.py`
+
+### `GeminiEmbeddingFunction`
+É responsável pela tradução dos textos em representações numéricas a fim de utilizá-los no modelo de LLM Gemini.
+
