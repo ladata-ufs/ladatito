@@ -13,4 +13,4 @@ Nessa pasta estão todos os arquivos necessários para a execução do ladatito.
 Notebook com a versão do ladatito adaptada para o Google Colab. Nesse arquivo também estão todas as informações dos membros da equipe, bem como os detalhes sobre as bibliotecas e modelos utilizados.
 
 ---
-> Desenvolvido por @nhawlao & @tuliosg [Nayla Chagas](https://github.com/nhawlao) & [Túlio Gois](https://github.com/tuliosg)
+> Desenvolvido por [Nayla Chagas](https://github.com/nhawlao) & [Túlio Gois](https://github.com/tuliosg)
